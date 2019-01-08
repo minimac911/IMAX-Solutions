@@ -8,6 +8,10 @@
     <title>Coming Soon - IMAX Solutions</title>
     <link rel="icon" href="images\logo.ico" type="image/jpg">
     <link rel="stylesheet" href="styles\main.css">
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts/exapnd.js"></script>
+
 </head>
 
 <body>
@@ -15,13 +19,16 @@
         <h1>COMING SOON!</h1>
         <h2>Contact us in the mean time!</h2>
         <div class="form-container">
-            <form id="contactForm" action="">
-                <input type="text" class="container" name="name" id="name" placeholder="Name?" autocorrect="off">
-                <input type="email" class="container" name="email" id="email" placeholder="Email?" autocapitalize="off" autocorrect="off">
-                <textarea type="text" class="container" name="message" id="message" placeholder="Message?"></textarea>
+            <form id="contactForm" action="scripts/mail.php" method="POST">
+                <input required="yes" type="text" class="container" name="name" id="name" placeholder="Name?"
+                    autocorrect="off">
+                <input required="yes" type="email" class="container" name="email" id="email" placeholder="Email?"
+                    autocapitalize="off" autocorrect="off">
+                <textarea required="yes" type="text" class="container" name="message" id="message"
+                    placeholder="Message?"></textarea>
                 <br>
-                <input class="submitForm container" id="btnClear" type="reset" value="Clear your message"/>
-                <input class="submitForm container"  id="btnSend" type="submit" value="Send"/>
+                <input class="submitForm container" id="btnClear" type="reset" value="Clear your message" />
+                <input class="submitForm container" id="btnSend" type="submit" value="Send" />
             </form>
         </div>
     </div>
