@@ -21,7 +21,7 @@
         <h2>Contact us in the mean time!</h2>
       
         <div class="form-container">
-            <form id="contactForm" action="scripts/mail.php" method="POST">
+            <form id="contactForm" action="scripts/send_mail.php" method="POST">
                 <input required="yes" type="text" class="container" name="name" id="name" placeholder="Name?"
                     autocorrect="off">
                 <input required="yes" type="email" class="container" name="email" id="email" placeholder="Email?"
@@ -33,10 +33,15 @@
                     <input class="submitForm container" id="btnClear" type="reset" value="Clear your message" />
                     <input class="submitForm container" id="btnSend" type="submit" value="Send" />
                 </div>
-                
             </form>
         </div>
+        <div class="footer">
+            Contact us directly!
+            <br>
+            Ian: ianm@vestroglo.com
+        </div>
     </div>
+    
 </body>
 
 </html>
