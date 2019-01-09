@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+
+
 body{
     font-family: 'Montserrat', sans-serif;
+    display: grid;   
+    grid-template-areas: "head head"
+                         "soon soon"
+                         "name name"
+                         "mail mail"
+                         "msg msg"
+                         "btnClear btnSend"; 
 }
 
 .center{
@@ -16,15 +25,19 @@ h1, h2{
 }
 
 h1{
+    grid-area: head;
     font-size: 80px;
     margin-bottom: 0;
     margin-top: 0;
 }
 
+h2{
+    grid-area: soon;
+}
+
 .form-container{
     align-content: center;
     margin: 0 auto;
-    width: 90%;
     max-width: 38em;
 }
 
@@ -34,26 +47,38 @@ h1{
     width: 100%;
     height: 1.5em;
     font-size: 100%;
-    padding: 0.5em;
+    padding: 1em;
     padding-left: 1em;
+    padding-right: 0;
     background-color: RGBA(204, 204, 204, .2);
     outline: none;
     border: none;
     margin: 0 auto;
 }
 
+.heading{
+    grid-area: head;
+}
+
+#email{
+    grid-area: mail;
+}
+
 #name{
+    grid-area: name;
     border-radius: 20px 20px 0 0;
 }
 
 #message{
-    padding: 1em;
+    grid-area: msg;
     font-family: 'Montserrat', sans-serif;
     height: 8em;
     resize: none;
     min-height: 3em;
     border-radius:  0 0 20px 20px;
     overflow: hidden;
+    padding-top: 1em;
+    padding-bottom: 0;
    
 }
 
@@ -74,11 +99,59 @@ h1{
 }
 
 #btnSend{
+    grid-area: btnSend;    
+    min-width: auto;
+    width: 45%;     
     float: right;
-    margin-right: 1em;
+    margin-right: -1em;
 }
 
 #btnClear{
+    grid-area: btnClear;  
+    width: 45%; 
+    min-width: auto; 
     float: left;
-    margin-left: 2em;
+    /* margin-left: 2em; */
+}
+
+@media only screen and (max-width: 900px) {
+
+    body {
+        grid-template-areas: 
+            "head"
+            "soon"
+            "body"
+            "name"
+            "mail"
+            "msg"
+            "btnClear"
+            "btnSend"; 
+    }
+    
+    h1{
+        font-size: 50px;
+    }
+
+    .form-container{
+        width: 100vw;
+        max-width: 100vw;
+        justify-content: center
+    }
+    
+    #name, #message, #btnSend, #btnClear{
+        border-radius: 0;
+    }
+
+    #btnSend{
+        grid-area: btnSend;    
+        width: 100%;     
+        margin-right: 0em;
+    }
+    
+    #btnClear{
+        grid-area: btnClear;  
+        width: 100%; 
+        /* margin-left: 2em; */
+    }
+
 }
